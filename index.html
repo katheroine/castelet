@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Castelet - Slide Builder</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; /* Dark background to make the slide pop */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Takes full height of the browser window */
+            overflow: hidden;
+        }
+        
+        #slide-viewport {
+            /* Instagram Square Dimensions */
+            width: 90vmin;  /* Uses 90% of the smallest screen dimension */
+            height: 90vmin; /* Ensures it stays a perfect square */
+            
+            background: #ffffff;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            
+            position: relative;
+            overflow: hidden;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="slide-viewport">
+        </div>
+
+    <script>
+        // Configuration: Define the name of the slide you want to load
+        const slideName = "series_name_1.slide.html";
+
+        function loadSlide() {
+            const viewport = document.getElementById('slide-viewport');
+            
+            // Create an iframe element
+            const loader = document.createElement('iframe');
+            
+            // Set the source to your slide file
+            loader.src = slideName;
+            
+            // Append it to the viewport
+            viewport.appendChild(loader);
+
+            console.log("Castelet: Loading " + slideName);
+        }
+
+        // Run the function when the page loads
+        window.onload = loadSlide;
+    </script>
+</body>
+</html>
