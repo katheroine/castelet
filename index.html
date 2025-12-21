@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castelet - Slide Creator</title>
+    <style>
+        /* Styles for the App UI */
+        body { font-family: sans-serif; background: #f0f2f5; padding: 20px; text-align: center; }
+        .controls { margin-bottom: 20px; }
+        
+        /* Styles for the Slide itself */
+        #slide-to-export {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #005F73 20%, #01796F 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        #slide-to-export h1 { font-size: 3rem; margin: 0; }
+        #slide-to-export p { font-size: 1.2rem; opacity: 0.9; }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <button id="download-btn">Download Slide as PNG</button>
+    </div>
+
+    <div id="slide-to-export">
+        <h1>Castelet</h1>
+        <p>Theatre of slides</p>
+    </div>
+
+    <script src="generator.js"></script>
+</body>
+</html>
