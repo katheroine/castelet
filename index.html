@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Castelet Explorer</title>
+    <style>
+        body { font-family: monospace; background: #1e1e1e; color: #d4d4d4; display: flex; height: 100vh; margin: 0; }
+        #sidebar { width: 350px; border-right: 1px solid #333; padding: 20px; overflow-y: auto; white-space: pre; }
+        #content-view { flex-grow: 1; padding: 20px; background: #252526; }
+        .node { cursor: pointer; line-height: 1.5; padding: 2px 5px; }
+        .node:hover { background: #3c3c3c; }
+        .folder-name { color: #ebcb8b; font-weight: bold; }
+        .file-name { color: #81a1c1; }
+        .content-item { background: #3b4252; margin: 5px 0; padding: 8px; border-radius: 3px; list-style: none; }
+    </style>
+</head>
+<body>
+
+<div id="sidebar">
+    <div style="font-weight: bold; color: #888; margin-bottom: 10px;">PROJECT TREE</div>
+    <div id="tree-container"></div>
+</div>
+
+<div id="content-view">
+    <h3 id="view-title">Directory Contents</h3>
+    <ul id="folder-listing">Select a directory to view files...</ul>
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
