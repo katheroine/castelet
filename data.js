@@ -17,10 +17,6 @@ const projectData = {
         {
           "name": "slide_3.html",
           "type": "file"
-        },
-        {
-          "name": "styles.css",
-          "type": "file"
         }
       ]
     },
@@ -61,10 +57,6 @@ const projectData = {
             },
             {
               "name": "slide_3.html",
-              "type": "file"
-            },
-            {
-              "name": "styles.css",
               "type": "file"
             }
           ]
