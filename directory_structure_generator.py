@@ -7,7 +7,7 @@ def get_directory_dict(path):
         children = []
         # Sort: Folders first, then files
         for entry in sorted(os.scandir(path), key=lambda e: (not e.is_dir(), e.name.lower())):
-            if entry.name.startswith('.') or entry.name in ["__pycache__", "generate_tree.py", "data.js"]:
+            if entry.name.startswith('.') or entry.name in ["__pycache__", "directory_structure_generator.py", "data.js", "script.js", "index.html", "README.md"]:
                 continue
             if entry.is_dir():
                 children.append(get_directory_dict(entry.path))

@@ -2,13 +2,13 @@ function init() {
     const container = document.getElementById('tree-container');
     if (typeof projectData !== 'undefined') {
         container.innerHTML = ""; // Clear loader
-        renderTree(projectData, container, "");
+        renderTree(projectData, container, "", "");
     } else {
         container.innerText = "Error: data.js not found. Run the Python script.";
     }
 }
 
-function renderTree(node, container, indent) {
+function renderTree(node, container, indent, branch) {
     const line = document.createElement('div');
     line.className = 'node';
     
@@ -16,7 +16,7 @@ function renderTree(node, container, indent) {
     const icon = isDir ? "📁" : "📄";
     const className = isDir ? "folder-name" : "file-name";
     
-    line.innerHTML = `${indent}${icon} <span class="${className}">${node.name}</span>`;
+    line.innerHTML = `${indent}${branch}${icon} <span class="${className}">${node.name}</span>`;
     
     if (isDir) {
         line.onclick = (e) => {
@@ -31,8 +31,8 @@ function renderTree(node, container, indent) {
         node.children.forEach((child, index) => {
             const isLast = index === node.children.length - 1;
             const branch = isLast ? "└── " : "├── ";
-            const nextIndent = indent + (isLast ? "    " : "│   ");
-            renderTree(child, container, indent + branch);
+            const nextIndent = indent ? indent + "│   " : "    ";
+            renderTree(child, container, nextIndent, branch);
         });
     }
 }

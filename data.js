@@ -94,22 +94,6 @@ const projectData = {
       "name": "topic_2",
       "type": "directory",
       "children": []
-    },
-    {
-      "name": "directory_structure_generator.py",
-      "type": "file"
-    },
-    {
-      "name": "index.html",
-      "type": "file"
-    },
-    {
-      "name": "README.md",
-      "type": "file"
-    },
-    {
-      "name": "script.js",
-      "type": "file"
     }
   ]
 };
